@@ -38,7 +38,38 @@ export const reset = css`
         background-color: transparent;
     }
 
-    .ReactModal__Overlay {
-        background-color: transparent !important;
+    button:disabled {
+        color: #087fff40;
+        background-color: transparent;
+        cursor: default;
+    }
+
+    /* @keyframes registerModalOverlay {
+        from {
+            opacity: 0;
+        }
+        to {
+
+        }
+    }
+    // 구글 : opacity : 불투명도(투명도의 반대) */
+
+    // css에서 animation 적용을 디테일하게 만들 수 있는(영역 구분지어서 할 수 있게 만들어주는) 어노테이션
+    @keyframes registerModalContentOpen {
+        from {
+            inset: auto 0 -650px;
+        }
+        to {
+            inset: auto 0 0;
+        }
+    }
+
+    @keyframes registerModalContentClose {
+        from {
+            inset: auto 0 0;
+        }
+        to {
+            inset: auto 0 -650px;
+        }
     }
 `;

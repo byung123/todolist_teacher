@@ -29,8 +29,10 @@
 		- todo_tb
 			- todoId		(PK, NN, AI)
 			- userId		(NN) (원래는 외래키로 사용하는데 안쓰는게 정신건강에 좋다) - 누가 작성했는지 알기 위해
+			- title		(NN)
 			- content		(NN)
-			- important	(NN)	values = 1, 2, 3, 4 (1일 수록 급한것) (참고로 0은 빈 값을 나타낼 수도 있기 때문에 잘 사용하지 않음)
+			- important	(NN)	values = 1, 2, (1일 수록 급한것) (참고로 0은 빈 값을 나타낼 수도 있기 때문에 잘 사용하지 않음)
+			- busy		(NN)	values = 1, 2
 			- status		(NN)	values = 1, 2
 			- todoDateTime	(NN)	yyyy-MM-dd hh:mm:ss (대문자M, 소문자m 구분위함)
 			- createDate	(NN)	yyyy-MM-dd hh:mm:ss

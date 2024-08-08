@@ -40,7 +40,6 @@ function MainLayout({children}) {
                     <div css={s.rightItem}><IoCellularSharp /><IoIosWifi /><IoIosBatteryFull /></div>
                 </div>
                 <MainContainer>
-                    <RegisterModal />
                     {children}
                 </MainContainer>
             </div>
