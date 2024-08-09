@@ -3,7 +3,6 @@ import { Children, useEffect, useState } from "react";
 import * as s from "./style";
 import { IoCellularSharp } from "react-icons/io5";
 import { IoIosWifi, IoIosBatteryFull } from "react-icons/io";
-import MainContainer from "../MainContainer/MainContainer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
 // 컴포넌트는 무조건 props 만을 매개변수로 받아올 수 있다. props는
@@ -39,9 +38,7 @@ function MainLayout({children}) {
                     <div css={s.topBarCenter}></div>
                     <div css={s.rightItem}><IoCellularSharp /><IoIosWifi /><IoIosBatteryFull /></div>
                 </div>
-                <MainContainer>
-                    {children}
-                </MainContainer>
+                {children}
             </div>
         </div>
     );

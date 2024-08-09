@@ -7,6 +7,7 @@ import { Global } from "@emotion/react";
 import { reset } from "./styles/common";
 import DandP from "./pages/DandP/DandP";
 import MainLayout from "./components/MainLayout/MainLayout";
+import TodoAll from "./pages/TodoAll/TodoAll";
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <Global styles={reset}/> {/* index.js에다가 해줘도 된다*/}
             <MainLayout>
                 <Routes>
-                    <Route path="/" element={<Dashborad />} />
+                    <Route path="/todo/*" element={<Dashborad />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/join" element={<Join />} />
                     <Route path="/dp" element={<DandP />} />

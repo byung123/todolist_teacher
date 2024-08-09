@@ -3,6 +3,8 @@ import ReactSelect from "react-select";
 import * as s from "./style";
 import { useEffect, useState } from "react";
 import { addTodoApi } from "../../apis/todoApis/addTodoApi";
+import { useSetRecoilState } from "recoil";
+import {refreshTodoListAtom } from "../../atoms/todolistAtom";
 
 function RegisterTodo({closeModal}) {
     // window + . 누르면 이모티콘 넣을 수 있음
@@ -15,6 +17,8 @@ function RegisterTodo({closeModal}) {
         { label: "🔴" + "급함", value: 1, },
         { label: "⚪" + "급하지않음", value: 2, }
     ]
+
+    const [ setRefresh ] = useSetRecoilState(refreshTodoListAtom);
 
     const [ todo, setTodo ] = useState({
         title: "",
@@ -65,6 +69,7 @@ function RegisterTodo({closeModal}) {
     const handleSubmitClick = () => {
         console.log(todo);
         addTodoApi(todo);
+        setRefresh(true);
         closeModal();
     }
 
