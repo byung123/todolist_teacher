@@ -20,7 +20,7 @@
             now()
         )
     </insert>
-    <select id="findAll" resultType="com.study.todolist.repository.TodoMapper">
+    <select id="findAll" resultType="com.study.todolist.entity.Todo">
         select
             todoId,
             userId,
@@ -35,7 +35,7 @@
         order by
             todoDateTime
     </select>
-    <select id="getTodoCounts" resultType="com.study.todolist.repository.TodoMapper">
+    <select id="getTodoCounts" resultType="com.study.todolist.entity.TodoCounts">
         select
             (select
                 count(*)
@@ -57,7 +57,7 @@
                 todo_tb
             where
                 status = 1
-                and todo_tb) as important,
+                and important = 1) as 'important',
 
             (select
                 count(*)
@@ -65,15 +65,14 @@
                 todo_tb
             where
                 status = 1
-                and todoDateTime like concat(substr(now(), 1, 10), "%")) as busy,
+                and busy = 1) as 'busy',
 
             (select
                 count(*)
             from
                 todo_tb
             where
-                status = 1
-                and important = 1) as complete;
+                status = 2) as 'complete';
     </select>
 
 </mapper>
