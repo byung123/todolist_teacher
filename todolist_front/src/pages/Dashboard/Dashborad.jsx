@@ -13,7 +13,7 @@ import { getTodoAllApi, getTodoCountsApi } from "../../apis/todoApis/getTodoApi"
 import { useEffect } from "react";
 
 function Dashborad(props) {
-    const [ setTodolistAll ] = useSetRecoilState(todolistAtom);
+    const setTodolistAll = useSetRecoilState(todolistAtom);
     const [ refresh, setRefresh ] = useRecoilState(refreshTodoListAtom);
 
     const requestTodolist = async () => {

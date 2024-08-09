@@ -31,17 +31,17 @@ const child = css`
         background-color: pink;
         align-self: flex-start;
     }
-    &:nth-of-type(2) {
-        background-color: white;
-    }
+    
+
     &:nth-of-type(3) {
         background-color: pink;
+        align-self: flex-end;
     }
-    &:nth-of-type(4) {
-        background-color: white;
-    }
+   
+
     &:nth-of-type(5) {
         background-color: pink;
+        align-self: flex-start;
     }
 `;
 
@@ -61,7 +61,6 @@ const child2 = css`
     border: 4px solid blue;
     width: 300px;
     height: 100%;
-    background-color: white;
     flex-shrink: 0;
     &:nth-of-type(1) {
         flex-shrink: 2;
